@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build'
-                sh 'npm run build'
+                sh 'mvn run build'
             }
         }
 
