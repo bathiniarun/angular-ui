@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+stage('Install Dependencies') {
+      steps {
+        sh 'npm install'
+      }
+    }
+
     stages {
         stage('Build') {
             steps {
