@@ -8,7 +8,12 @@ pipeline {
                 sh 'npm run build'
             }
         }
-
+stage('Run') {
+            steps {
+                // Start the Angular development server
+                sh 'npm start'
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Push'
