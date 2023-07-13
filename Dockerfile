@@ -12,7 +12,8 @@ RUN npm run build
 # Stage 2: Serve the Angular app using nginx
 FROM nginx:latest
 
-COPY --from=builder /app/dist/angular-app /usr/share/nginx/html
+COPY --from=builder /app/dist/my-angular-app /usr/share/nginx/html
+
 
 EXPOSE 80
 
