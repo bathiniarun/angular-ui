@@ -1,20 +1,12 @@
 # Stage 1: Build the Angular app
-FROM node:16 as builder
-
+FROM node:16.14 as angular-build
 WORKDIR /app
-
-COPY package.json package-lock.json ./
-RUN npm install
-
 COPY . .
+RUN npm install
 RUN npm run build
 
-# Stage 2: Serve the Angular app using nginx
-FROM nginx:latest
-
-COPY --from=builder /app/dist/my-angular-app /usr/share/nginx/html
-
-
+# Stage 2: Create the NGINX image and copy the built Angular app
+FROM nginx:1-alpine
+COPY --from=angular-build /app/dist/angular-demo /usr/share/nginx/html
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
