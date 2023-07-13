@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: angular
+  name: dotnet
   namespace: arun
   labels:
     app: arun
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: arun
@@ -16,8 +16,8 @@ spec:
         app: arun
     spec:
       containers:
-        - name: angular
-          image: redbull.azurecr.io/augular:1.0.0
+        - name: dotnet
+          image: aaaaruuunnn.azurecr.io/dotnetdemo-app:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
