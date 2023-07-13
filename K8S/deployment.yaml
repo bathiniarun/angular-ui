@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: docker
+  name: angular
   namespace: arun
   labels:
     app: arun
@@ -16,7 +16,7 @@ spec:
         app: arun
     spec:
       containers:
-        - name: dotnet
+        - name: angular
           image: redbull.azurecr.io/angular:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
