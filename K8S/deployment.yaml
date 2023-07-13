@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: dotnet
-          image: aaaaruuunnn.azurecr.io/dotnetdemo-app:latest
+          image: aaaaruuunnn.azurecr.io/dotnetdemo-app
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
