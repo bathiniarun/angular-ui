@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: angular
-          image: redbull.azurecr.io/angular:1.0.0
+          image: redbull.azurecr.io/augular:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
